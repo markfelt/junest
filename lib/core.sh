@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/data/data/com.termux/files/usr/bin/env bash
 #
 # Copyright (c) 2015
 #
@@ -49,12 +49,12 @@ fi
 [ -z ${JUNEST_BASE} ] && JUNEST_BASE=${JUNEST_HOME}/opt/junest
 if [ -z ${JUNEST_TEMPDIR} ] || [ ! -d ${JUNEST_TEMPDIR} ]
 then
-    JUNEST_TEMPDIR=/tmp
+    JUNEST_TEMPDIR=/data/data/com.termux/files/usr/tmp
 fi
 
 # The update of the variable PATH ensures that the executables are
-# found on different locations
-PATH=/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+# found on different locations (Not under Termux! If the Path isn't correctly set, we have bigger problems!)
+#PATH=/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 
 # The executable uname is essential in order to get the architecture
 # of the host system, so a fallback mechanism cannot be used for it.
