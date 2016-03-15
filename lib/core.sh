@@ -173,7 +173,7 @@ function _setup_env(){
     is_env_installed && die "Error: ${NAME} has been already installed in $JUNEST_HOME"
     mkdir_cmd -p "${JUNEST_HOME}"
     imagepath=$1
-    $TAR -zxpf ${imagepath} -C ${JUNEST_HOME}
+    $TAR -zxpf --hard-dereference ${imagepath} -C ${JUNEST_HOME}
     mkdir_cmd -p ${JUNEST_HOME}/run/lock
     info "The default mirror URL is ${DEFAULT_MIRROR}."
     info "Remember to refresh the package databases from the server:"
